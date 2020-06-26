@@ -1,5 +1,5 @@
 # RStudioShiny-nginx
-Wrapper script for installing R, RStudio Server, Shiny Server all behind an nginx reverse proxy
+## Wrapper script for installing R, RStudio Server, Shiny Server all behind an nginx reverse proxy
 
 This script assumes you have a pretty clean Ubuntu 20.04 LTS install.
 
@@ -13,6 +13,7 @@ We will:
 * Download and install Shiny Server
 * Configure Shiny Server (more on this below)
 
+
 Once complete you'll have:
 * nginx default home page being served on port 80 (http://127.0.0.1)
 * RStudio Server being served on port 8787 and also as a subdirectory (http://127.0.0.1:8787) http://127.0.0.1/rstudio)
@@ -21,5 +22,9 @@ Once complete you'll have:
 * Shiny Server is being run out of the users home directory (~/shiny)
 * Shiny Server can host multiple apps and will present an index page 
 
-Cautions
+## Instructions
+Simply download and run the rstudioshinynginxwrapper.sh script. This should be as simple as:
+wget https://github.com/jb2cool/RStudioShiny-nginx/blob/master/rstudioshinynginxwrapper.sh | bash
+
+## Cautions
 The install script will overwrite your /etc/nginx/sites-enabled/default file, if you have already made customisations ot this file ensure you have a backup.
