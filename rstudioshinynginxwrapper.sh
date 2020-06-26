@@ -12,7 +12,6 @@ gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | sudo apt-key add -
 sudo apt-get update && sudo apt-get install r-base r-base-dev -y
 
 # Install RStudio-Server
-sudo apt-get install gdebi-core -y
 wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.3.959-amd64.deb
 sudo dpkg -i rstudio-server-1.3.959-amd64.deb
 rm rstudio-server-1.3.959-amd64.deb
