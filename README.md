@@ -24,7 +24,9 @@ Once complete you'll have:
 
 ## Instructions
 Simply download and run the rstudioshinynginxwrapper.sh script. This should be as simple as:
-wget https://github.com/jb2cool/RStudioShiny-nginx/blob/master/rstudioshinynginxwrapper.sh | bash
+wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/master/rstudioshinynginxwrapper.sh
+chmod +x rstudopshinynginxwrapper.sh
+bash rstudioshinynginxwrapper.sh
 
 ## Cautions
 The install script will overwrite your /etc/nginx/sites-enabled/default file, if you have already made customisations ot this file ensure you have a backup.
