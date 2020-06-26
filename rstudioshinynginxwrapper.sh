@@ -1,4 +1,5 @@
-R/RStudio/Shiny-Server/nginx on Ubuntu
+#!/bin/bash
+#R/RStudio/Shiny-Server/nginx on Ubuntu
 
 # Add repository to APT sources.list
 echo deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/ | sudo tee --append /etc/apt/sources.list
@@ -18,12 +19,11 @@ rm rstudio-server-1.3.959-amd64.deb
 
 # Install nginx
 sudo apt-get install nginx -y
-sudo sed -i 's/listen \[/# listen \[/' /etc/nginx/sites-enabled/default
 sudo systemctl start nginx
 sudo systemctl enable nginx
 
 # Configure nginx with RStudio-Server and Shiny-Server virtualhosts
-PROBABLY NEED TO HAVE A SEEDFILE SOMEWHERE AND PULL IN
+sudo wget https://github.com/jb2cool/RStudioShiny-nginx/blob/master/default -P /etc/nginx/sites-enabled/
 
 # Install Shiny R package
 R -e "install.packages('shiny', repos='https://cran.rstudio.com/')"
