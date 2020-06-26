@@ -41,4 +41,4 @@ sudo sed -i "s/site_dir \/srv\/shiny-server/site_dir \/home\/$USER\/shiny/" /etc
 mkdir $HOME/shiny
 
 # Copy sample apps to users new Shiny dir
-cp -r /opt/shiny-server/samples/sample-apps/hellp/ ~/shiny
+cp -r /opt/shiny-server/samples/sample-apps/hello/ ~/shiny
