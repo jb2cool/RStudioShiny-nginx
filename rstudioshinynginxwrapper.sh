@@ -23,7 +23,7 @@ sudo systemctl start nginx
 sudo systemctl enable nginx
 
 # Configure nginx with RStudio-Server and Shiny-Server virtualhosts
-sudo wget https://github.com/jb2cool/RStudioShiny-nginx/blob/master/default -P /etc/nginx/sites-enabled/
+sudo wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/master/default -O /etc/nginx/sites-enabled/
 
 # Install Shiny R package
 mkdir -p ~/R/x86_64-pc-linux-gnu-library/4.0
