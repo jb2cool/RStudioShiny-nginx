@@ -14,7 +14,7 @@ sudo apt-get update && sudo apt-get install r-base r-base-dev -y
 # Install RStudio-Server
 sudo apt-get install gdebi-core
 wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.3.959-amd64.deb
-sudo gdebi rstudio-server-1.3.959-amd64.deb
+sudo gdebi --non-interactive rstudio-server-1.3.959-amd64.deb
 rm rstudio-server-1.3.959-amd64.deb
 
 # Install nginx
@@ -31,7 +31,7 @@ R -e "install.packages('shiny', repos='https://cran.rstudio.com/', lib=~/R/x86_6
 
 # Install Shiny-Server
 wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.14.948-amd64.deb
-sudo gdebi shiny-server-1.5.14.948-amd64.deb
+sudo gdebi --non-interactive shiny-server-1.5.14.948-amd64.deb
 rm shiny-server-1.5.14.948-amd64.deb
 
 # Configure Shiny-Server
