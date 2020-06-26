@@ -42,8 +42,6 @@ mkdir $HOME/shiny
 cp -r /opt/shiny-server/samples/sample-apps/hello/ ~/shiny
 
 # Tell user to reboot
-sudo systemctl start nginx
+sudo systemctl restart nginx
 sudo systemctl enable nginx
 sudo systemctl restart shiny-server
-
-echo Please reboot before trying your new RStudio Server/Shiny Server install.
