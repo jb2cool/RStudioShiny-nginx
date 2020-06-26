@@ -20,3 +20,6 @@ Once complete you'll have:
 * Shiny Server is being run as the user that installed it
 * Shiny Server is being run out of the users home directory (~/shiny)
 * Shiny Server can host multiple apps and will present an index page 
+
+Cautions
+The install script will overwrite your /etc/nginx/sites-enabled/default file, if you have already made customisations ot this file ensure you have a backup.
