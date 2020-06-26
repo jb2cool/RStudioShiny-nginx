@@ -19,8 +19,6 @@ rm rstudio-server-1.3.959-amd64.deb
 
 # Install nginx
 sudo apt-get install nginx -y
-sudo systemctl start nginx
-sudo systemctl enable nginx
 
 # Configure nginx with RStudio-Server and Shiny-Server virtualhosts
 sudo wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/master/default -O /etc/nginx/sites-enabled/default
@@ -44,4 +42,8 @@ mkdir $HOME/shiny
 cp -r /opt/shiny-server/samples/sample-apps/hello/ ~/shiny
 
 # Tell user to reboot
+sudo systemctl start nginx
+sudo systemctl enable nginx
+sudo systemctl restart shiny-server
+
 echo Please reboot before trying your new RStudio Server/Shiny Server install.
