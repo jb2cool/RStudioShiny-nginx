@@ -27,7 +27,7 @@ sudo wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/master/de
 
 # Install Shiny R package
 mkdir -p ~/R/x86_64-pc-linux-gnu-library/4.0
-R -e "install.packages('shiny', repos='https://cran.rstudio.com/', lib=~/R/x86_64-pc-linux-gnu-library/4.0)"
+R -e "install.packages('shiny', repos='https://cran.rstudio.com/', lib='~/R/x86_64-pc-linux-gnu-library/4.0')"
 
 # Install Shiny-Server
 wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.14.948-amd64.deb
