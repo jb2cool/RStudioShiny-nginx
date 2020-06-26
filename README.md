@@ -30,5 +30,5 @@ bash rstudioshinynginxwrapper.sh
 ```
 
 ## Cautions
-* The install script will overwrite your /etc/nginx/sites-enabled/default file, if you have already made customisations ot this file ensure you have a backup.
+* The install script will overwrite your /etc/nginx/sites-enabled/default file, if you have already made customisations to this file ensure you have a backup.
 * The install script manually creates your R personal library, this shouldn't have any impact if you already have a personal library but it's untested.
