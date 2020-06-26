@@ -42,3 +42,6 @@ mkdir $HOME/shiny
 
 # Copy sample apps to users new Shiny dir
 cp -r /opt/shiny-server/samples/sample-apps/hello/ ~/shiny
+
+# Tell user to reboot
+echo Please reboot before trying your new RStudio Server/Shiny Server install.
