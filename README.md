@@ -26,7 +26,6 @@ Once complete you'll have:
 Simply download and run the rstudioshinynginxwrapper.sh script. This should be as simple as:
 ```
 wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/master/rstudioshinynginxwrapper.sh
-chmod +x rstudopshinynginxwrapper.sh
 bash rstudioshinynginxwrapper.sh
 ```
 
