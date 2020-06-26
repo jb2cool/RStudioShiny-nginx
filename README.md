@@ -20,7 +20,7 @@ Once complete you'll have:
 * Shiny Server being served on port 3838 and also as a subdirectory (http://127.0.0.1:3838 & http://127.0.0.1/shiny)
 * Shiny Server is being run as the user that installed it (little bit weird but makes it easy for the user)
 * Shiny Server is being run out of the users home directory (~/shiny) (little bit weird but makes it easy for the user)
-* Shiny Server can host multiple apps and will present an index page, an entry gets created for every folder in ~/shiny (If you only want to present a single app then just delete the sample app folder in ~/shiny and publish your application directly into there)
+* Shiny Server can host multiple apps and will present an initial index page, an index entry gets created for every folder in ~/shiny (If you only want to host a single app then just delete the sample app folder in ~/shiny and publish your application directly into there)
 
 ## Instructions
 Simply download and run the rstudioshinynginxwrapper.sh script. This should be as simple as:
