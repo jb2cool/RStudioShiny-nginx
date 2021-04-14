@@ -1,5 +1,5 @@
 #!/bin/bash
-# R/RStudio/Shiny-Server/nginx on Ubuntu
+# Install R/RStudio/Shiny-Server/nginx on Ubuntu
 
 # Add repository to APT sources.list
 echo deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/ | sudo tee --append /etc/apt/sources.list
