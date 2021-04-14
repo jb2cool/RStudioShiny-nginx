@@ -14,9 +14,8 @@ rm rstudio-server-latest-amd64.deb
 sudo apt-get install nginx -y
 
 # Install latest version of Shiny-Server
+sudo apt-get install curl -y
 VERSION=$(curl https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION)
-#wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION -O "version.txt"
-#VERSION=$(cat version.txt)  
 wget --no-verbose "https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-$VERSION-amd64.deb" -O shiny-server-latest.deb
 sudo gdebi -n shiny-server-latest.deb
 rm -f version.txt shiny-server-latest.deb
