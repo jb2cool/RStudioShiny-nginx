@@ -29,6 +29,13 @@ wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/master/install
 bash install-rstudioshinynginx.sh
 ```
 
+## Updating
+Occasionally you'll want to update to newer versions of R, RStudio Server, Shiny Server and nginx. R and nginx would likely get updated by your regular update schedule on your machine but since RStudio Server and Shiny Server were downloaded and installed manually these need a more manual approach to update them. Use the update script to update to the latest versions. Simply download and run the update-rstudioshinynginx.sh script. This should be as simple as:
+```
+wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/master/update-rstudioshinynginx.sh
+bash update-rstudioshinynginx.sh
+```
+
 ## Cautions
 * The install script will overwrite your /etc/nginx/sites-enabled/default file, if you have already made customisations to this file ensure you have a backup.
 * The install script manually creates your R personal library, this shouldn't have any impact if you already have a personal library but it's untested.
