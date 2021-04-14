@@ -23,13 +23,14 @@ Once complete you'll have:
 * Shiny Server can host multiple apps and will present an initial index page, an index entry gets created for every folder in ~/shiny (If you only want to host a single app then just delete the sample app folder in ~/shiny and publish your application directly into there)
 
 ## Instructions
+### Installation
 Simply download and run the install-rstudioshinynginx.sh script. This should be as simple as:
 ```
 wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/master/install-rstudioshinynginx.sh
 bash install-rstudioshinynginx.sh
 ```
 
-## Updating
+### Updating
 Occasionally you'll want to update to newer versions of R, RStudio Server, Shiny Server and nginx. R and nginx would likely get updated by your regular update schedule on your machine but since RStudio Server and Shiny Server were downloaded and installed manually these need a more manual approach to update them. Use the update script to update to the latest versions. Simply download and run the update-rstudioshinynginx.sh script. This should be as simple as:
 ```
 wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/master/update-rstudioshinynginx.sh
