@@ -28,9 +28,11 @@ mkdir -p ~/R/x86_64-pc-linux-gnu-library/4.1
 R -e "install.packages('shiny', repos='https://cran.rstudio.com/', lib='~/R/x86_64-pc-linux-gnu-library/4.1')"
 
 # Install Shiny Server
-wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.15.953-amd64.deb
-sudo gdebi --non-interactive shiny-server-1.5.15.953-amd64.deb
-rm shiny-server-1.5.15.953-amd64.deb
+sudo apt-get install curl -y
+VERSION=$(curl https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION)
+wget --no-verbose "https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-$VERSION-amd64.deb" -O shiny-server-latest.deb
+sudo gdebi -n shiny-server-latest.deb
+rm shiny-server-latest.deb
 
 # Configure Shiny Server
 sudo sed -i "s/run_as shiny/run_as $USER/" /etc/shiny-server/shiny-server.conf
