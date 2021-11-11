@@ -4,11 +4,11 @@
 # Update repository list and install R
 sudo apt-get update && sudo apt-get install r-base r-base-dev -y
 
-# Install latest verion of RStudio Server
+# Install latest verion of RStudio Server (This doesn't work)
 sudo apt-get install gdebi-core -y
-wget https://www.rstudio.org/download/latest/stable/server/bionic/rstudio-server-latest-amd64.deb
-sudo gdebi --non-interactive rstudio-server-latest-amd64.deb
-rm rstudio-server-latest-amd64.deb
+# wget https://www.rstudio.org/download/latest/stable/server/bionic/rstudio-server-latest-amd64.deb
+# sudo gdebi --non-interactive rstudio-server-latest-amd64.deb
+# rm rstudio-server-latest-amd64.deb
 
 # Install nginx this will update it if there is a new version
 sudo apt-get install nginx -y
