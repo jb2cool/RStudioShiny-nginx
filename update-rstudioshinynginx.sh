@@ -5,9 +5,6 @@
 sudo apt-get update && sudo apt-get install r-base r-base-dev -y
 
 # Install RStudio Server
-# I can't find always up-to-date links that work, it should be
-# https://rstudio.org/download/latest/stable/server/bionic/rstudio-server-latest-amd64.deb
-# Found from https://dailies.rstudio.com/links/#rstudio-server-stable
 sudo apt-get install gdebi-core -y
 wget https://www.rstudio.org/download/latest/stable/server/bionic/rstudio-server-latest-amd64.deb  -O rstudio-latest.deb
 sudo gdebi --non-interactive rstudio-latest.deb
