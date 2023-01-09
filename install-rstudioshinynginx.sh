@@ -2,6 +2,17 @@
 # Install R/RStudio Server/Shiny Server/nginx on Ubuntu
 
 # Add repository to APT sources.list
+if [[ $(lsb_release -rs) == "20.04" ]]
+then
+       echo "Ubuntu 20.04 found"
+       echo deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/ | sudo tee --append /etc/apt/sources.list
+elif [[ $(lsb_release -rs) == "22.04" ]]
+then
+       echo "Ubuntu 22.04 found"
+       echo deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ | sudo tee --append /etc/apt/sources.list
+else
+       echo "Non-compatible version"
+fi
 echo deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/ | sudo tee --append /etc/apt/sources.list
 
 # Add keys
