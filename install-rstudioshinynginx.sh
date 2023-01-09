@@ -13,7 +13,6 @@ then
 else
        echo "Non-compatible version"
 fi
-echo deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/ | sudo tee --append /etc/apt/sources.list
 
 # Add keys
 gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
