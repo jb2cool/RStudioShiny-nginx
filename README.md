@@ -4,7 +4,7 @@
 This script assumes you have a pretty clean Ubuntu 20.04 or 22.04 LTS install.
 
 We will:
-* Add the official R 4.2 respository
+* Add the official R 4.3 respository
 * Add the APT keys for this repository
 * Install R (r-base and r-base-dev)
 * Download and install RStudio Server
