@@ -5,12 +5,21 @@
 if [[ $(lsb_release -rs) == "20.04" ]]
 then
        echo "Ubuntu 20.04 found"
-       echo deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/ | sudo tee --append /etc/apt/sources.list
+                if grep -Fxq "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" /etc/apt/sources.list
+                then
+                        echo "R repo already in sources.list"
+                else
+                        echo deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/ | sudo tee --append /etc/apt/sources.list
+                fi
 elif [[ $(lsb_release -rs) == "22.04" ]]
 then
        echo "Ubuntu 22.04 found"
-       echo deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ | sudo tee --append /etc/apt/sources.list
-else
+                if grep -Fxq "deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" /etc/apt/sources.list
+                then
+                        echo "R repo already in sources.list"
+                else
+                        echo deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ | sudo tee --append /etc/apt/sources.list
+                fi
        echo "Non-compatible version"
 fi
 
@@ -46,7 +55,13 @@ rm shiny-server-latest.deb
 
 # Configure Shiny Server
 sudo sed -i "s/run_as shiny/run_as $USER/" /etc/shiny-server/shiny-server.conf
-sudo sed -i "s/3838/ 3838 0.0.0.0/" /etc/shiny-server/shiny-server.conf
+grep -q "3838 0.0.0.0" /etc/shiny-server/shiny-server.conf
+if echo $?
+then
+        echo "Shiny server already has IPv4 configured"
+        else
+        echo "sudo sed -i "s/3838/ 3838 0.0.0.0/" /etc/shiny-server/shiny-server.conf
+fi
 sudo sed -i "s/site_dir \/srv\/shiny-server/site_dir \/home\/$USER\/shiny/" /etc/shiny-server/shiny-server.conf
 sudo sed -i '/directory_index on;$/a \ \ \ \ sanitize_errors off;\n \ \ \ disable_protocols xdr-streaming xhr-streaming iframe-eventsource iframe-htmlfile;' /etc/shiny-server/shiny-server.conf
 mkdir $HOME/shiny
