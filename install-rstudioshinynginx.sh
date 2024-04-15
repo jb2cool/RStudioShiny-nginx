@@ -56,13 +56,7 @@ rm shiny-server-latest.deb
 
 # Configure Shiny Server
 sudo sed -i "s/run_as shiny/run_as $USER/" /etc/shiny-server/shiny-server.conf
-grep -q "3838 0.0.0.0" /etc/shiny-server/shiny-server.conf
-if echo $?
-then
-        echo "Shiny server already has IPv4 configured"
-        else
-        echo "sudo sed -i "s/3838/ 3838 0.0.0.0/" /etc/shiny-server/shiny-server.conf
-fi
+sudo sed -i "s/3838;/ 3838 0.0.0.0;/" /etc/shiny-server/shiny-server.conf
 sudo sed -i "s/site_dir \/srv\/shiny-server/site_dir \/home\/$USER\/shiny/" /etc/shiny-server/shiny-server.conf
 sudo sed -i '/directory_index on;$/a \ \ \ \ sanitize_errors off;\n \ \ \ disable_protocols xdr-streaming xhr-streaming iframe-eventsource iframe-htmlfile;' /etc/shiny-server/shiny-server.conf
 mkdir $HOME/shiny
