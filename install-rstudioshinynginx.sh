@@ -20,6 +20,7 @@ then
                 else
                         echo deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ | sudo tee --append /etc/apt/sources.list
                 fi
+else
        echo "Non-compatible version"
 fi
 
