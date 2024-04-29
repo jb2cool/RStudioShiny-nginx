@@ -52,8 +52,8 @@ sudo apt-get install nginx -y
 sudo wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/main/default -O /etc/nginx/sites-enabled/default
 
 # Install Shiny R package
-mkdir -p ~/R/x86_64-pc-linux-gnu-library/4.3
-R -e "install.packages('shiny', repos='https://cran.rstudio.com/', lib='~/R/x86_64-pc-linux-gnu-library/4.3')"
+mkdir -p ~/R/x86_64-pc-linux-gnu-library/4.4
+R -e "install.packages('shiny', repos='https://cran.rstudio.com/', lib='~/R/x86_64-pc-linux-gnu-library/4.4')"
 
 # Install Shiny Server
 sudo apt-get install curl -y
