@@ -41,3 +41,4 @@ bash update-rstudioshinynginx.sh
 * The install script will overwrite your /etc/nginx/sites-enabled/default file, if you have already made customisations to this file ensure you have a backup.
 * The install script manually creates your R personal library, this shouldn't have any impact if you already have a personal library but it's untested.
 * This is designed for ease-of-use on a single-user machine, if this is a multi-user machine then this is probably not the approach to take.
+* Don't run the update script from within RStudio-Server itself, if you do you'll end up pulling the rug from under your own feet, do this from a separate session.
