@@ -23,19 +23,22 @@ then
 elif [[ $(lsb_release -rs) == "24.04" ]]
 then
     echo "Ubuntu 24.04 found"
-        if grep -Fxq "deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" /etc/apt/sources.list
+        if grep -Fxq "deb https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/" /etc/apt/sources.list
         then
             echo "R repo already in sources.list"
         else
-            echo deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ | sudo tee --append /etc/apt/sources.list
+            echo deb https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/ | sudo tee --append /etc/apt/sources.list
         fi
 else
     echo "Non-compatible version"
 fi
 
-# Add keys
-gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | sudo apt-key add -
+# Add keys the proper way
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+
+# Add keys the workaround way (this didn't work when i tried it on 28/10/2024)
+# gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+# gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | sudo apt-key add -
 
 # Update repository list and install R
 sudo apt-get update && sudo apt-get install r-base r-base-dev -y
