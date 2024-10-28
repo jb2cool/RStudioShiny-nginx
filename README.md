@@ -1,7 +1,7 @@
 # RStudioShiny-nginx
 ## Wrapper script for installing R, RStudio Server, Shiny Server all behind an nginx reverse proxy
 
-This script assumes you have a pretty clean Ubuntu 20.04 or 22.04 LTS install.
+This script assumes you have a pretty clean Ubuntu 20.04, 22.04 or 24.04 LTS install.
 
 We will:
 * Add the official R 4.4 respository
