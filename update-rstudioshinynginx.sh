@@ -12,6 +12,9 @@ then
 elif [[ $(lsb_release -rs) == "22.04" ]]
 then
     wget https://www.rstudio.org/download/latest/stable/server/jammy/rstudio-server-latest-amd64.deb  -O rstudio-latest.deb
+elif [[ $(lsb_release -rs) == "24.04" ]]
+then
+    wget https://www.rstudio.org/download/latest/stable/server/jammy/rstudio-server-latest-amd64.deb  -O rstudio-latest.deb
 else
     echo "Non-compatible version"
 fi

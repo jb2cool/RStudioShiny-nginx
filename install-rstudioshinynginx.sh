@@ -20,6 +20,15 @@ then
         else
             echo deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ | sudo tee --append /etc/apt/sources.list
         fi
+elif [[ $(lsb_release -rs) == "24.04" ]]
+then
+    echo "Ubuntu 24.04 found"
+        if grep -Fxq "deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" /etc/apt/sources.list
+        then
+            echo "R repo already in sources.list"
+        else
+            echo deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ | sudo tee --append /etc/apt/sources.list
+        fi
 else
     echo "Non-compatible version"
 fi
@@ -37,6 +46,9 @@ if [[ $(lsb_release -rs) == "20.04" ]]
 then
     wget https://www.rstudio.org/download/latest/stable/server/focal/rstudio-server-latest-amd64.deb  -O rstudio-latest.deb
 elif [[ $(lsb_release -rs) == "22.04" ]]
+then
+    wget https://www.rstudio.org/download/latest/stable/server/jammy/rstudio-server-latest-amd64.deb  -O rstudio-latest.deb
+elif [[ $(lsb_release -rs) == "24.04" ]]
 then
     wget https://www.rstudio.org/download/latest/stable/server/jammy/rstudio-server-latest-amd64.deb  -O rstudio-latest.deb
 else
