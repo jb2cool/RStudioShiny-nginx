@@ -57,7 +57,7 @@ sudo sed -i "s/3838;/ 3838 0.0.0.0;/" /etc/shiny-server/shiny-server.conf
 sudo sed -i "s/site_dir \/srv\/shiny-server/site_dir \/home\/$USER\/shiny/" /etc/shiny-server/shiny-server.conf
 if grep -q sanitize_errors /etc/shiny-server/shiny-server.conf
 then
-        echo "Additional Shiny config already completed"
+    echo "Additional Shiny config already completed"
 else
     sudo sed -i '/directory_index on;$/a \ \ \ \ sanitize_errors off;\n \ \ \ disable_protocols xdr-streaming xhr-streaming iframe-eventsource iframe-htmlfile;' /etc/shiny-server/shiny-server.conf
 fi
@@ -76,8 +76,12 @@ sudo systemctl restart shiny-server
 rm install-rstudioshinynginx.sh
 
 # Tell user everything works
+echo ""
+echo ""
 echo "#######################################################################################"
 echo "# nginx is now hosting a webpage on http://127.0.0.1                                  #"
 echo "# RStudio Server is now available on http://127.0.0.1:8787 & http://127.0.0.1/rstudio #"
 echo "# Shiny Server is now available on http://127.0.0.1:3838 & http://127.0.0.1/shiny     #"
 echo "#######################################################################################"
+echo ""
+echo ""
