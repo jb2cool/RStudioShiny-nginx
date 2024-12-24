@@ -1,44 +1,17 @@
 #!/bin/bash
 # Install R/RStudio Server/Shiny Server/nginx on Ubuntu
 
-# Add repository to APT sources.list
-if [[ $(lsb_release -rs) == "20.04" ]]
+# Add repository to APT sources
+if [[ $(lsb_release -is) == "Ubuntu" ]]
 then
-    echo "Ubuntu 20.04 found"
-        if grep -Fxq "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" /etc/apt/sources.list
-        then
-            echo "R repo already in sources.list"
-        else
-            echo deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/ | sudo tee --append /etc/apt/sources.list
-        fi
-elif [[ $(lsb_release -rs) == "22.04" ]]
-then
-    echo "Ubuntu 22.04 found"
-        if grep -Fxq "deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" /etc/apt/sources.list
-        then
-            echo "R repo already in sources.list"
-        else
-            echo deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/ | sudo tee --append /etc/apt/sources.list
-        fi
-elif [[ $(lsb_release -rs) == "24.04" ]]
-then
-    echo "Ubuntu 24.04 found"
-        if grep -Fxq "deb https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/" /etc/apt/sources.list
-        then
-            echo "R repo already in sources.list"
-        else
-            echo deb https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/ | sudo tee --append /etc/apt/sources.list
-        fi
+    echo "Ubuntu found"
+    sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" -y
 else
-    echo "Non-compatible version"
+    echo "Non-compatible Linux distribution"
 fi
 
-# Add keys the proper way
+# Add repo key
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
-
-# Add keys the workaround way (this didn't work when i tried it on 28/10/2024)
-# gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-# gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | sudo apt-key add -
 
 # Update repository list and install R
 sudo apt-get update && sudo apt-get install r-base r-base-dev -y
