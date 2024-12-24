@@ -4,10 +4,11 @@
 # Add repository to APT sources
 if [[ $(lsb_release -is) == "Ubuntu" ]]
 then
-    echo "Ubuntu found"
+    echo "Linux distribution is Ubuntu, proceeding to add R repository to APT"
     sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" -y
 else
-    echo "Non-compatible Linux distribution"
+    echo "Non-compatible Linux distribution, please seek further instructions on how to install R here https://cloud.r-project.org/bin/linux/"
+    exit 1
 fi
 
 # Add repo key
