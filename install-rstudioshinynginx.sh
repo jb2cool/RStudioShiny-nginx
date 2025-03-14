@@ -67,10 +67,8 @@ mkdir $HOME/shiny
 cp -r /opt/shiny-server/samples/sample-apps/hello/ ~/shiny
 
 # Restart services
-sudo systemctl daemon-reload
-sudo systemctl restart nginx
-sudo systemctl enable nginx
-sudo systemctl restart shiny-server
+sudo systemctl reload nginx
+sudo systemctl reload shiny-server
 
 # Clean up install script
 rm install-rstudioshinynginx.sh
