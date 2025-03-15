@@ -68,7 +68,7 @@ cp -r /opt/shiny-server/samples/sample-apps/hello/ ~/shiny
 
 # Restart services
 sudo systemctl reload nginx
-sudo systemctl reload shiny-server
+sudo systemctl restart shiny-server
 
 # Clean up install script
 rm install-rstudioshinynginx.sh
