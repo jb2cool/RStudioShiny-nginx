@@ -9,7 +9,7 @@ LOG_FILE="install-rstudioshinynginx.log"
 log() {
     echo "[INFO] $1" | tee -a "$LOG_FILE"
 }
-log "Starting installation of R, Shiny Server, and NGINX..."
+log "Starting installation of R, Shiny Server, and nginx"
 
 # Add CRAN repository to APT sources
 log "Adding CRAN repository"
