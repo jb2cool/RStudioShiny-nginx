@@ -41,7 +41,7 @@ rm rstudio-latest.deb
 sudo apt-get install nginx -y
 
 # Configure nginx with RStudio Server and Shiny Server virtualhosts
-cp /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default.bak
+sudo cp /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default.bak
 sudo wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/main/default -O /etc/nginx/sites-enabled/default
 
 # Install Shiny R package
