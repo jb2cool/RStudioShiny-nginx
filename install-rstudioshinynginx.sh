@@ -19,7 +19,7 @@ log "Adding CRAN repository..."
 if [[ $(lsb_release -is) == "Ubuntu" ]]
 then
     echo "Linux distribution is Ubuntu, proceeding to add R repository to APT"
-    sudo echo "deb [signed-by=/usr/share/keyrings/cran-archive-keyring.gpg] https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" | sudo tee /etc/apt/sources.list.d/cran.list
+    sudo echo "deb [signed-by=/usr/share/keyrings/cran-archive-keyring.gpg] https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" | sudo tee /etc/apt/sources.list.d/cran.list
 else
     echo "Non-compatible Linux distribution, please seek further instructions on how to install R here https://cloud.r-project.org/bin/linux/"
     exit 1
