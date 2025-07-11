@@ -66,7 +66,7 @@ sudo wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/main/defa
 
 # Install Shiny R package
 log "Find R version..."
-R_VERSION=$(R --version | head -n 1 | grep -oP '\d+\.\d+'
+R_VERSION=$(R --version | head -n 1 | grep -oP '\d+\.\d+')
 log "Create personal R repository directory..."
 mkdir -p ~/R/x86_64-pc-linux-gnu-library/$R_VERSION
 log "Installing Shiny R package into personal repository..."
