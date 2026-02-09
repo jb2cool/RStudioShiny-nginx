@@ -1,4 +1,4 @@
-## Conf file for hosting RStudio and Shiny Server behind nginx reverse proxy
+## Conf file for hosting RStudio Server and Shiny Server behind nginx reverse proxy
 ## https://github.com/jb2cool/RStudioShiny-nginx
 
 # Support proxying of web-socket connections
