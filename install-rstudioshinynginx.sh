@@ -65,6 +65,8 @@ log "Downloading and installing pre-configured nginx config..."
 sudo wget https://raw.githubusercontent.com/jb2cool/RStudioShiny-nginx/main/default -O /etc/nginx/sites-enabled/default
 
 # Install Shiny R package
+log "Install libuv1-dev as it's a pre-requisite of building the Shiny package..."
+sudo apt-get install libuv1-dev -y
 log "Find R version..."
 R_VERSION=$(R --version | head -n 1 | grep -oP '\d+\.\d+')
 log "Create personal R repository directory..."
